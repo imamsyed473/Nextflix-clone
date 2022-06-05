@@ -8,7 +8,7 @@ interface Props {
   netflixOriginals: Movie[]
 }
 function Banner({ netflixOriginals }: Props) {
-  const [movie, setMovie] = useState<Movie | null>(null)
+  const [movie, setMovie] = useState<Movie | null | undefined >(null)
 
   useEffect(() => {
     setMovie(
