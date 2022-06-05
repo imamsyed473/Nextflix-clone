@@ -8,12 +8,14 @@ interface Props {
   netflixOriginals: Movie[]
 }
 function Banner({ netflixOriginals }: Props) {
-  const [movie, setMovie] = useState<Movie | null | undefined >(null)
+  const [movie, setMovie] = useState<Movie | null | undefined>(null)
 
   useEffect(() => {
-    setMovie(
-      netflixOriginals[Math.floor(Math.random() * netflixOriginals?.length)]
-    )
+    if (netflixOriginals != null || netflixOriginals != undefined) {
+      setMovie(
+        netflixOriginals[Math.floor(Math.random() * netflixOriginals?.length)]
+      )
+    }
   }, [netflixOriginals])
 
   return (
